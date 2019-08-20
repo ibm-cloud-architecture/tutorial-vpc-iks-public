@@ -1,4 +1,5 @@
-# Use GUI, CLI or API to Connect an App deployed within VPC to an IKS deployment outside VPC
+# Use GUI, CLI or API to Connect an App in a VPC to app in IKS 
+
 ### Purpose
 
 The purpose of this scenario is to connect an App in VPC to an IKS deployemnt
