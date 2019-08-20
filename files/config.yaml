@@ -1,0 +1,59 @@
+validate: "strict"
+overRideIpsecConf: {}
+overRideIpsecSecrets: {}
+enablePodSNAT: "auto"
+enableRBAC: true
+enableServiceSourceIP: true
+enableSingleSourceIP: false
+localSubnetNAT:
+remoteSubnetNAT: 
+loadBalancerIP:
+connectUsingLoadBalancerIP: "false"
+nodeSelector: {}
+privilegedVpnPod: false
+helmTestsToRun: ALL
+tolerations: []
+strongswanLogging: |-
+  default = 1
+  cfg = 2
+  dmn = 2
+  ike = 2
+  net = 0
+
+ipsec:
+  keyexchange: ikev2
+  esp: "aes256-sha1-modp1024"
+  ike: "aes256-sha1-modp1024"
+  auto: add
+  closeaction: auto
+  dpdaction: restart
+  ikelifetime: 86400
+  keyingtries: "%forever"
+  lifetime: "1h"
+  margintime: "9m"
+  additionalOptions: {}
+
+local:
+  subnet: "172.30.0.0/16,172.21.0.0/16"
+  id: ""
+
+remote:
+  subnet: "10.240.0.0/24"
+  privateIPtoPing:
+  id: ""
+
+preshared:
+  secret: "teiyoo1shie5eGh1ooyeNg0chooShaiV"
+
+monitoring:
+  enable: false
+  clusterName: ""
+  privateIPs: ""
+  httpEndpoints: ""
+  timeout: "5"
+  delay: "120"
+  slackWebhook: ""
+  slackChannel: ""
+  slackUsername: "IBM strongSwan VPN"
+  slackIcon: ":swan:"
+
